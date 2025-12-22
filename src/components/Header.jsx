@@ -21,18 +21,18 @@ function Header() {
 
   return (
     <header
-      className={`w-full fixed top-0 mx-auto px-20 py-5 flex items-center justify-center bg-white ${
+      className={`w-full fixed top-0 mx-auto px-12 xl:px-20 py-5 flex items-center justify-center bg-white ${
         isScroll ? "shadow-md" : ""
       } transition-all duration-200 ease-in-out`}
     >
       <div className="w-full flex items-center justify-between">
         <div>
           <a href="#">
-            <img className="w-auto h-10" src={Logo_Full} alt="Logo" />
+            <img className="w-auto h-9 xl:h-10" src={Logo_Full} alt="Logo" />
           </a>
         </div>
         <nav>
-          <ul className="flex items-center justify-center text-base font-medium gap-18">
+          <ul className="flex items-center justify-center text-base font-medium gap-8 xl:gap-18">
             <li>
               <a href="#" className="group relative">
                 Home
@@ -59,10 +59,10 @@ function Header() {
             </li>
           </ul>
         </nav>
-        <div className="flex items-center justify-center gap-10">
+        <div className="flex items-center justify-center gap-6 xl:gap-10">
           <a
             href="#"
-            className="w-6 h-6 hover:-translate-y-1 transition-all duration-200 ease-in-out"
+            className="w-5 xl:w-6 h-5 xl:h-6 hover:-translate-y-1 transition-all duration-200 ease-in-out"
           >
             <img
               className="w-full h-full"
@@ -72,7 +72,7 @@ function Header() {
           </a>
           <a
             href="#"
-            className="w-6 h-6 hover:-translate-y-1 transition-all duration-200 ease-in-out"
+            className="w-5 xl:w-6 h-5 xl:h-6 hover:-translate-y-1 transition-all duration-200 ease-in-out"
           >
             <img
               className="w-full h-full"
@@ -82,7 +82,7 @@ function Header() {
           </a>
           <a
             href="#"
-            className="w-6 h-6 hover:-translate-y-1 transition-all duration-200 ease-in-out"
+            className="w-5 xl:w-6 h-5 xl:h-6 hover:-translate-y-1 transition-all duration-200 ease-in-out"
           >
             <img
               className="w-full h-full"
@@ -92,7 +92,7 @@ function Header() {
           </a>
           <a
             href="#"
-            className="w-6 h-6 hover:-translate-y-1 transition-all duration-200 ease-in-out"
+            className="w-5 xl:w-6 h-5 xl:h-6 hover:-translate-y-1 transition-all duration-200 ease-in-out"
           >
             <img
               className="w-full h-full"
