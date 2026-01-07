@@ -13,10 +13,11 @@ import {
 import CategoryCard from "../components/homePage/CategoryCard.jsx";
 import ProductCard from "../components/homePage/ProductCard.jsx";
 import useProduct from "../contexts/ProductContext.jsx";
+import LoadingSpinner from "../components/LoadingSpinner.jsx";
 
 function Home() {
-  const { products, loading, error, refetchProducts } = useProduct();
-  const productData = (products?.data || []).slice(0, 8);
+  const { products, loading, error } = useProduct();
+  const productData = (products || []).slice(0, 8);
 
   return (
     <>
@@ -75,24 +76,31 @@ function Home() {
             Discover quality products designed for everyday living..
           </p>
         </div>
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 place-items-center">
-          {productData?.map((product, index) => (
-            <ProductCard
-              key={product?.id}
-              src={product?.image_path}
-              title={product?.name}
-              description={(product?.description || "").slice(0, 60)}
-              price={product?.price}
-            />
-          ))}
-        </div>
-        <div className="w-full flex items-center justify-center mt-20">
-          <Link to="/shop">
-            <Button variant="outline" size="sm" className="font-semibold">
-              Show More
-            </Button>
-          </Link>
-        </div>
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 place-items-center">
+            {productData?.map((product, index) => (
+              <ProductCard
+                key={product?.id}
+                src={product?.image_path}
+                title={product?.name}
+                description={(product?.description || "").slice(0, 60)}
+                price={product?.price}
+              />
+            ))}
+          </div>
+        )}
+
+        {!loading && (
+          <div className="w-full flex items-center justify-center mt-20">
+            <Link to="/shop">
+              <Button variant="outline" size="sm" className="font-semibold">
+                Show More
+              </Button>
+            </Link>
+          </div>
+        )}
       </section>
     </>
   );

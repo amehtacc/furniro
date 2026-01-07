@@ -15,7 +15,7 @@ function Button({
     primary: "bg-[#B88E2F] text-white hover:bg-[#B88E2F]/95",
     secondary: "bg-white text-[#B88E2F] hover:text-white hover:bg-[#B88E2F]",
     outline:
-      "border border-[#B88E2F] text-[#B88E2F] bg-white hover:bg-[#B88E2F] hover:text-white",
+      "border border-[#B88E2F] text-[#B88E2F] hover:bg-[#B88E2F] hover:text-white",
   };
 
   const sizeStyles = {
