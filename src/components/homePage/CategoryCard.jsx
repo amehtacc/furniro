@@ -1,13 +1,22 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CategoryCard({ src1, src2, text }) {
   const [onHover, setOnHover] = useState(false);
+  const navigate = useNavigate();
+
+  const category = text.toLowerCase();
+
+  function handleCategory() {
+    navigate(`/shop?category=${category}`);
+  }
 
   return (
     <div className="relative w-full max-w-[380px] flex flex-col items-center justify-center gap-6">
       {/* Image */}
       <div
-        className="relative w-full aspect-3/4 rounded-xl overflow-hidden"
+        onClick={handleCategory}
+        className="relative w-full aspect-3/4 rounded-xl overflow-hidden cursor-pointer"
         onMouseEnter={() => setOnHover(true)}
         onMouseLeave={() => setOnHover(false)}
       >

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   Logo_Full,
   Account_Alert,
@@ -21,7 +22,7 @@ function Header() {
 
   return (
     <header
-      className={`w-full fixed top-0 mx-auto px-12 xl:px-20 py-5 flex items-center justify-center bg-white ${
+      className={`w-full fixed top-0 mx-auto px-12 xl:px-20 py-5 flex items-center justify-center bg-white z-50 ${
         isScroll ? "shadow-md" : ""
       } transition-all duration-200 ease-in-out`}
     >
@@ -34,16 +35,16 @@ function Header() {
         <nav>
           <ul className="flex items-center justify-center text-base font-medium gap-8 xl:gap-18">
             <li>
-              <a href="#" className="group relative">
+              <Link to="/"  className="group relative">
                 Home
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#797979] h-0.5 w-0 group-hover:w-full transition-all duration-200 ease-in-out"></span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="group relative">
+              <Link to="/shop" className="group relative">
                 Shop
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#797979] h-0.5 w-0 group-hover:w-full transition-all duration-200 ease-in-out"></span>
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" className="group relative">
