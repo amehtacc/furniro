@@ -3,3 +3,10 @@
   to = "https://furniture-api.fly.dev/v1/:splat"
   status = 200
   force = true
+
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
