@@ -3,15 +3,20 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ProductProvider } from "./contexts/ProductContext";
+import { CartProvider } from "./contexts/CartContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <ProductProvider>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <CartProvider>
+        <ScrollToTop />
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </CartProvider>
     </ProductProvider>
   );
 }
