@@ -6,9 +6,7 @@ function filterByCategory(products, category) {
       (product) =>
         product.category === "kitchen" || product.category === "table"
     );
-  }
-
-  if (category === "living") {
+  } else if (category === "living") {
     return products.filter(
       (product) =>
         product.category === "sofa" ||
@@ -16,9 +14,7 @@ function filterByCategory(products, category) {
         product.category === "lamp" ||
         product.category === "mirror"
     );
-  }
-
-  if (category === "bedroom") {
+  } else if (category === "bedroom") {
     return products.filter(
       (product) =>
         product.category === "wardrove" ||
@@ -26,6 +22,8 @@ function filterByCategory(products, category) {
         product.category === "mirror" ||
         product.category === "desk"
     );
+  } else {
+    return products.filter((product) => product.category === category);
   }
 }
 export default filterByCategory;
