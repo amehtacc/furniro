@@ -11,6 +11,7 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import Shop from "./pages/Shop.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx"
+import CartPage from "./pages/CartPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="shop" element={<Shop />} />
       <Route path="shop/:skuId" element={<ProductDetail />} />
+      <Route path="cart" element={<CartPage />} />
     </Route>
   )
 );
