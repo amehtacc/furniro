@@ -1,12 +1,12 @@
 import React from "react";
-import { Shop_Hero_Image } from "../assets/images.js";
-import Usp from "../components/Usp.jsx";
+import { useSearchParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { Shop_Hero_Image } from "../assets/images.js";
+import Usp from "../components/Usp.jsx";
 import ProductCard from "../components/homePage/ProductCard.jsx";
 import useProduct from "../contexts/ProductContext.jsx";
 import LoadingSpinner from "../components/LoadingSpinner.jsx";
-import { useSearchParams } from "react-router-dom";
 import filterByCategory from "../utils/filterByCategory.js";
 
 function Shop() {
@@ -15,9 +15,9 @@ function Shop() {
   const { pathname } = useLocation();
   const pageName = pathname.slice(1);
 
-  const [searchParams] = useSearchParams()
-  const category = searchParams.get("category")
-  
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get("category");
+
   const productData = filterByCategory(products, category) || [];
 
   return (
@@ -50,10 +50,13 @@ function Shop() {
             {productData?.map((product, index) => (
               <ProductCard
                 key={product?.id}
+                sku={product?.sku}
                 src={product?.image_path}
                 title={product?.name}
                 description={(product?.description || "").slice(0, 60)}
                 price={product?.price}
+                discount_price={product?.discount_price}
+                product={product}
               />
             ))}
           </div>

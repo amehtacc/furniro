@@ -18,7 +18,7 @@ import LoadingSpinner from "../components/LoadingSpinner.jsx";
 function Home() {
   const { products, loading, error } = useProduct();
   const productData = (products || []).slice(0, 8);
-
+  
   return (
     <>
       {/* Hero Section */}
@@ -83,10 +83,13 @@ function Home() {
             {productData?.map((product, index) => (
               <ProductCard
                 key={product?.id}
+                sku={product?.sku}
                 src={product?.image_path}
                 title={product?.name}
                 description={(product?.description || "").slice(0, 60)}
                 price={product?.price}
+                discount_price={product?.discount_price}
+                product={product}
               />
             ))}
           </div>
