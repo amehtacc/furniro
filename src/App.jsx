@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import { ProductProvider } from "./contexts/ProductContext";
 import { CartProvider } from "./contexts/CartContext";
 import ScrollToTop from "./components/ScrollToTop";
-
+import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <ProductProvider>
@@ -16,6 +16,7 @@ function App() {
           <Outlet />
         </main>
         <Footer />
+        <ToastContainer />
       </CartProvider>
     </ProductProvider>
   );
