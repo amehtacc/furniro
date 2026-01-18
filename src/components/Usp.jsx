@@ -8,7 +8,7 @@ import {
 
 function Usp() {
   return (
-    <div className="w-full h-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-10 bg-[#FAF3EA] px-6 sm:px-10 md:px-16 xl:px-20 py-20 md:py-30">
+    <div className="w-full h-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-10 bg-[#F9F1E7] px-6 sm:px-10 md:px-16 xl:px-20 py-20 md:py-30">
       <div className="flex md:flex-col xl:flex-row items-center justify-start gap-3">
         <div className="w-[60px] h-[60px]">
           <img className="max-h-full" src={Trophy} alt="Trophy" />

@@ -27,7 +27,7 @@ function SearchOverlay({ setSearchOverlay }) {
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search prodcut here..."
-              className="w-full outline-none bg-gray-200 p-3 rounded-l-md text-lg"
+              className="w-full outline-none bg-[#f7e4ce] p-3 rounded-l-md text-lg"
             />
             <div className="bg-white p-2.5 rounded-r-md cursor-pointer">
               <Search className="w-8 h-8" />
@@ -35,7 +35,7 @@ function SearchOverlay({ setSearchOverlay }) {
           </div>
 
           {searchedProducts.length > 0 && (
-            <div className="bg-gray-300 p-5 rounded-md max-h-[300px] lg:max-h-[400px] overflow-y-auto">
+            <div className="bg-[#F9F1E7] p-5 rounded-md max-h-[300px] lg:max-h-[400px] overflow-y-auto">
               {searchedProducts?.map((product) => (
                 <div
                   key={product.id}
