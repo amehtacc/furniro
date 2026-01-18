@@ -57,7 +57,7 @@ function SearchOverlay({ setSearchOverlay }) {
           )}
 
           {searchValue && searchedProducts.length === 0 && (
-            <div className="bg-gray-300 p-5 rounded-md flex items-center justify-center">
+            <div className="bg-[#F9F1E7] p-5 rounded-md flex items-center justify-center">
               No product found
             </div>
           )}
