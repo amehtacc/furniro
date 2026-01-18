@@ -27,12 +27,12 @@ function ProductDetail() {
       setCart((prev) =>
         prev.map((item) =>
           item.id === productDetail.id
-            ? { ...item, productCount: item.productCount + 1 }
+            ? { ...item, product_count: item.product_count + 1, total_price: (item.product_count + 1) * (item.discount_price) }
             : item
         )
       );
     } else {
-      setCart((prev) => [...prev, { ...productDetail, productCount: 1 }]);
+      setCart((prev) => [...prev, { ...productDetail, product_count: 1, total_price: 1 * productDetail.discount_price }]);
     }
   }
 

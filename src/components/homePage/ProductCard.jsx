@@ -31,12 +31,12 @@ function ProductCard({
       setCart((prev) =>
         prev.map((item) =>
           item.id === product.id
-            ? { ...item, productCount: item.productCount + 1 }
+            ? { ...item, product_count: item.product_count + 1, total_price: (item.product_count + 1) * (item.discount_price) }
             : item
         )
       );
     } else {
-      setCart((prev) => [...prev, { ...product, productCount: 1 }]);
+      setCart((prev) => [...prev, { ...product, product_count: 1, total_price: 1 * product.discount_price }]);
     }
   }
 
