@@ -21,6 +21,13 @@ This project includes all major ecommerce pages and interactions.
 
 <br>
 
+## 🖼️ Demo / Preview
+
+The live demo link is here: 
+> [Live Project Link](https://furniro-g012026.netlify.app/)
+
+<br>
+
 ## 🧩 Pages & Features
 
 ### 🏠 Home Page
